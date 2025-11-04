@@ -1,7 +1,6 @@
 using Content.Shared.Examine;
 using Content.Shared.Popups;
 using Content.Shared.Power;
-using Content.Shared.Power.Components;
 using Content.Shared.Power.EntitySystems;
 using Content.Shared.Temperature.Components;
 using Content.Shared.Verbs;
@@ -19,8 +18,6 @@ public abstract partial class SharedEntityHeaterSystem : EntitySystem
     [Dependency] private readonly SharedPopupSystem _popup = default!;
     [Dependency] private readonly SharedPowerReceiverSystem _receiver = default!;
     [Dependency] private readonly SharedAudioSystem _audio = default!;
-    [Dependency] private readonly ILogManager _logManager = default!;
-    private ISawmill _sawmill = default!;
     private readonly int _settingCount = Enum.GetValues<EntityHeaterSetting>().Length;
 
     public override void Initialize()
@@ -31,7 +28,6 @@ public abstract partial class SharedEntityHeaterSystem : EntitySystem
         SubscribeLocalEvent<EntityHeaterComponent, GetVerbsEvent<AlternativeVerb>>(OnGetVerbs);
         SubscribeLocalEvent<EntityHeaterComponent, PowerChangedEvent>(OnPowerChanged);
 
-        _sawmill = _logManager.GetSawmill("Heat");
     }
 
     private void OnExamined(Entity<EntityHeaterComponent> ent, ref ExaminedEvent args)
