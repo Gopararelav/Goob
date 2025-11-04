@@ -5,7 +5,7 @@ using Content.Shared.Power.EntitySystems;
 using Content.Shared.Temperature.Components;
 using Content.Shared.Verbs;
 using Robust.Shared.Audio.Systems;
-using Robust.Shared.Toolshed.Commands.Values;
+
 
 namespace Content.Shared.Temperature.Systems;
 
@@ -27,7 +27,6 @@ public abstract partial class SharedEntityHeaterSystem : EntitySystem
         SubscribeLocalEvent<EntityHeaterComponent, ExaminedEvent>(OnExamined);
         SubscribeLocalEvent<EntityHeaterComponent, GetVerbsEvent<AlternativeVerb>>(OnGetVerbs);
         SubscribeLocalEvent<EntityHeaterComponent, PowerChangedEvent>(OnPowerChanged);
-
     }
 
     private void OnExamined(Entity<EntityHeaterComponent> ent, ref ExaminedEvent args)

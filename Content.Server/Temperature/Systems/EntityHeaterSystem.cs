@@ -40,7 +40,6 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
 using Content.Server.Power.Components;
-using Content.Shared.Damage.Components;
 using Content.Shared.Placeable;
 using Content.Shared.Temperature;
 using Content.Shared.Temperature.Components;
