@@ -6,7 +6,6 @@ using Content.Shared.Temperature.Components;
 using Content.Shared.Verbs;
 using Robust.Shared.Audio.Systems;
 
-
 namespace Content.Shared.Temperature.Systems;
 
 /// <summary>

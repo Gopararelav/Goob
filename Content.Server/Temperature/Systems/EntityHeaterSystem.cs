@@ -59,7 +59,6 @@ public sealed class EntityHeaterSystem : SharedEntityHeaterSystem
         base.Initialize();
 
         SubscribeLocalEvent<EntityHeaterComponent, MapInitEvent>(OnMapInit);
-
     }
 
     private void OnMapInit(Entity<EntityHeaterComponent> ent, ref MapInitEvent args)
