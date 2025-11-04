@@ -150,7 +150,7 @@ public abstract class SharedPowerReceiverSystem : EntitySystem
     /// </summary>
     public bool IsPowered(Entity<SharedApcPowerReceiverComponent?> entity)
     {
-        if (!ResolveApc(entity.Owner, ref entity.Comp))
+        if (!ResolveApc(entity.Owner, ref entity.Comp) || !entity.Comp.NeedsPower)
             return true;
 
         return entity.Comp.Powered;
