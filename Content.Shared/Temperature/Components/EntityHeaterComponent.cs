@@ -27,7 +27,7 @@ public sealed partial class EntityHeaterComponent : Component
 
     /// <summary>
     /// CorvaxGoob-Grille-Update-Start
-    /// This power the device when it can operate without energy
+    /// A number indicating that the electricity demand is met from an alternative source
     /// </summary>
     [DataField]
     public float PowerlessPower = 0f;
