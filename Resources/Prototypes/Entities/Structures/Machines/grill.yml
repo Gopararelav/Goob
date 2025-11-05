@@ -23,7 +23,7 @@
       visible: false
   - type: ApcPowerReceiver
     powerLoad: 0 # off by default
-    needsPower: true
+    needsPower: true #CorvaxGoob-Grille-Update
   - type: EntityHeater
     settingSound:
       path: /Audio/Weapons/click.ogg

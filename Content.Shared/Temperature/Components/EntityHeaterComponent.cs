@@ -26,11 +26,12 @@ public sealed partial class EntityHeaterComponent : Component
     public float Power = 2400f;
 
     /// <summary>
-    /// CorvaxGoob
-    /// Power when needPower: false
+    /// CorvaxGoob-Grille-Update-Start
+    /// This power the device when it can operate without energy
     /// </summary>
     [DataField]
     public float PowerlessPower = 0f;
+    //CorvaxGoob-Grille-Update-End
 
     /// <summary>
     /// Current setting of the heater. If it is off or unpowered it won't heat anything.

@@ -150,6 +150,7 @@ public abstract class SharedPowerReceiverSystem : EntitySystem
     /// </summary>
     public bool IsPowered(Entity<SharedApcPowerReceiverComponent?> entity)
     {
+        //CorvaxGoob-Grille-Update
         if (!ResolveApc(entity.Owner, ref entity.Comp) || !entity.Comp.NeedsPower)
             return true;
 

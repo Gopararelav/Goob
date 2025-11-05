@@ -17,6 +17,7 @@ public abstract partial class SharedEntityHeaterSystem : EntitySystem
     [Dependency] private readonly SharedPopupSystem _popup = default!;
     [Dependency] private readonly SharedPowerReceiverSystem _receiver = default!;
     [Dependency] private readonly SharedAudioSystem _audio = default!;
+
     private readonly int _settingCount = Enum.GetValues<EntityHeaterSetting>().Length;
 
     public override void Initialize()

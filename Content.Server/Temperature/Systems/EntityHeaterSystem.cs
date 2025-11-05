@@ -71,7 +71,8 @@ public sealed class EntityHeaterSystem : SharedEntityHeaterSystem
     public override void Update(float deltaTime)
     {
         var query = EntityQueryEnumerator<EntityHeaterComponent, ItemPlacerComponent, ApcPowerReceiverComponent>();
-        while (query.MoveNext(out _, out var ent, out var placer, out var power))
+        //CorvaxGoob-Grille-Update-Start
+        while (query.MoveNext(out _, out var Ent, out var placer, out var power))
         {
             var energy = 0f;
             if (power.NeedsPower)
@@ -82,12 +83,14 @@ public sealed class EntityHeaterSystem : SharedEntityHeaterSystem
             }
             else
             {
-                energy = ent.PowerlessPower * deltaTime;
+                energy = Ent.PowerlessPower * deltaTime;
             }
+            //CorvaxGoob-Grille-Update-End
+
             // don't divide by total entities since it's a big grill
             // excess would just be wasted in the air but that's not worth simulating
             // if you want a heater thermomachine just use that...
-            foreach (var plent in placer.PlacedEntities)
+            foreach (var ent in placer.PlacedEntities)
             {
                 _temperature.ChangeHeat(plent, energy);
             }
@@ -104,11 +107,13 @@ public sealed class EntityHeaterSystem : SharedEntityHeaterSystem
 
         if (!TryComp<ApcPowerReceiverComponent>(ent, out var power))
             return;
+        //CorvaxGoob-Grille-Update-Star
         if (power.NeedsPower)
         {
             power.Load = SettingPower(setting, ent.Comp.Power);
             return;
         }
         ent.Comp.PowerlessPower = SettingPower(setting, ent.Comp.Power);
+        //CorvaxGoob-Grille-Update-End
     }
 }
