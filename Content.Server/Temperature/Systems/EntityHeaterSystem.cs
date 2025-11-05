@@ -72,7 +72,7 @@ public sealed class EntityHeaterSystem : SharedEntityHeaterSystem
     {
         var query = EntityQueryEnumerator<EntityHeaterComponent, ItemPlacerComponent, ApcPowerReceiverComponent>();
         //CorvaxGoob-Grille-Update-Start
-        while (query.MoveNext(out _, out var Ent, out var placer, out var power))
+        while (query.MoveNext(out _, out var entity, out var placer, out var power))
         {
             var energy = 0f;
             if (power.NeedsPower)
@@ -83,7 +83,7 @@ public sealed class EntityHeaterSystem : SharedEntityHeaterSystem
             }
             else
             {
-                energy = Ent.PowerlessPower * deltaTime;
+                energy = entity.PowerlessPower * deltaTime;
             }
             //CorvaxGoob-Grille-Update-End
 
