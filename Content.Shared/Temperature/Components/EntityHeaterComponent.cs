@@ -26,7 +26,8 @@ public sealed partial class EntityHeaterComponent : Component
     public float Power = 2400f;
 
     /// <summary>
-    /// CorvaxGoob-Grille-Update-Start
+    // CorvaxGoob-Grille-Update-Start
+    /// <summary>
     /// This power the device when it can operate without energy
     /// </summary>
     [DataField]
