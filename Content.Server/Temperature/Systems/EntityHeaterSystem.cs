@@ -77,9 +77,9 @@ public sealed class EntityHeaterSystem : SharedEntityHeaterSystem
             var energy = 0f;
             if (power.NeedsPower)
             {
-                energy = power.PowerReceived * deltaTime;
                 if (!power.Powered)
                     continue;
+                energy = power.PowerReceived * deltaTime;
             }
             else
             {
@@ -92,7 +92,7 @@ public sealed class EntityHeaterSystem : SharedEntityHeaterSystem
             // if you want a heater thermomachine just use that...
             foreach (var ent in placer.PlacedEntities)
             {
-                _temperature.ChangeHeat(plent, energy);
+                _temperature.ChangeHeat(ent, energy);
             }
         }
     }
