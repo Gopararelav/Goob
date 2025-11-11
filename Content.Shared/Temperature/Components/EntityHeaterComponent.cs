@@ -25,8 +25,8 @@ public sealed partial class EntityHeaterComponent : Component
     [DataField]
     public float Power = 2400f;
 
+    // CorvaxGoob-Grille-Update-Start
     /// <summary>
-    /// CorvaxGoob-Grille-Update-Start
     /// A number indicating that the electricity demand is met from an alternative source
     /// </summary>
     [DataField]
